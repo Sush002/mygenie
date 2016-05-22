@@ -1,2 +1,2 @@
-# mygenie1
+# mygenie
 script developement
