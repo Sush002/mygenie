@@ -27,3 +27,24 @@ for lst in $processor_list;do
 	   done
 	fi
 done
+
+
+#ENV logic
+
+test(){
+	s3Path=$1
+	echo "My code runs with  PATH: $s3Path"
+
+}
+
+s3_def_path=s3://xyz/common/abc
+#running the default module always first
+test $s3_def_path
+
+
+#check if a parameter is passed  for env and then run
+if [ $# -ne 0 ];then
+	s3_env_path=s3://xyz/$1/abc
+	test $s3_env_path
+fi
+
